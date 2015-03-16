@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 ruby '2.2.1'
 gem 'rails', '4.2.0'
 gem 'sass-rails', '~> 5.0'
@@ -18,12 +18,14 @@ gem "fog"
 gem "mini_magick"
 gem 'foundation-rails'
 gem "font-awesome-rails"
+gem 'therubyracer', :group => :assets
 gem "figaro"
 gem 'haml-rails'
 gem "best_in_place"
 gem 'high_voltage'
 gem 'pundit'
 gem 'simple_form'
+
 gem 'pg'
 group :development do
   # gem 'better_errors'
@@ -41,6 +43,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'capistrano-rails', '~> 1.1.1'
 end
 group :production do
   gem 'rails_12factor'
