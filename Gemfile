@@ -44,6 +44,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'capistrano-rails', '~> 1.1.1'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-chruby'
+  gem 'capistrano-figaro-yml', '~> 1.0.1'
 end
 group :production do
   gem 'rails_12factor'

@@ -8,8 +8,8 @@ set :repo_url, 'git@github.com:i5okie/ibc_help_app.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deploy/ibc_help_app'
-
+set :deploy_to, '/home/deploy/apps/ibc_help_app'
+set :chruby_ruby, '2.2.1'
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -23,7 +23,7 @@ set :deploy_to, '/home/deploy/ibc_help_app'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml}
+# set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -35,6 +35,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # set :keep_releases, 5
 
 namespace :deploy do
+
 
   desc 'Restart application'
   task :restart do
@@ -53,6 +54,19 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+    end
+  end
+
+
+  namespace :figaro do
+    desc "SCP transfer figaro configuration to the shared folder"
+    task :setup do
+      transfer :up, "config/application.yml", "#{shared_path}/application.yml", :via => :scp
+    end
+   
+    desc "Symlink application.yml to the release path"
+    task :finalize do
+      run "ln -sf #{shared_path}/application.yml #{release_path}/config/application.yml"
     end
   end
 
