@@ -29,8 +29,8 @@ default: &default
    encoding: unicode  
    pool: 5
    timeout: 5000
-   username: redress
-   password: h4kjmjqeh
+   username: ibc_help
+   password: ibcworld
 
 development:
   <<: *default
@@ -45,4 +45,4 @@ test:
 
 production:
   <<: *default
-  database: redress
+  database: ibc_help
