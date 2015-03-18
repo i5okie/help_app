@@ -29,7 +29,7 @@ default: &default
    encoding: unicode  
    pool: 5
    timeout: 5000
-   username: ivan
+   username: postgres
    password: 
 
 development:
