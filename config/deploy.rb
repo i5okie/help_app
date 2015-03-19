@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+lock '3.4.0'
 
 set :application, 'ibc_help_app'
 set :repo_url, 'git@github.com:i5okie/ibc_help_app.git'
@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:i5okie/ibc_help_app.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deploy/apps/ibc_help_app'
+set :deploy_to, '/home/deploy/ibc_help_app'
 set :chruby_ruby, '2.2.1'
 # Default value for :scm is :git
 # set :scm, :git
