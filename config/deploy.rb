@@ -30,28 +30,8 @@ set :linked_files, %w{config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
-#set :default_env, { path: "/opt/ruby/bin:$PATH" }
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-set :default_env, { 
-  office_username: "ipolchenko@ibcworld.net",
-  office_password: "H4kjmjqEh",
-  admin_name: "Ivan P",
-  admin_email: "ivan@ibcworld.net",
-  admin_password: "h4kjmjqeh",
-
-  aws_access_key: "AKIAJNP42UONHBAM2FWQ",
-  aws_secret_key: "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",
-  aws_account_id: "929615564749",
-  aws_bucket: "ibc-assets",
-
-  wt_password: "H4kjmjqEh",
-
-  do_clientkey: "537faa1d0cfc0bbc194c21cadedc42f9",
-  do_apikey: "436b3bad8500e47733e90c93b53d4c63",
-  do_key_name: "IBC_DO",
-  mailer_sender: "no-reply@ibcworld.net",
-  domain: "help.ibcworld.net"
-}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
@@ -65,6 +45,14 @@ namespace :deploy do
     end
   end
 
+  desc "set environmental variabls"
+  task :setenv do
+    on roles(:app) do
+      execute 'export OFFICE_USERNAME="ipolchenko@ibcworld.net" OFFICE_PASSWORD="H4kjmjqEh" ADMIN_NAME="Ivan P" ADMIN_EMAIL="ivan@ibcworld.net" ADMIN_PASSWORD="h4kjmjqeh"  AWS_ACCESS_KEY="AKIAJNP42UONHBAM2FWQ" AWS_SECRET_KEY="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" AWS_ACCOUNT_ID="929615564749" AWS_BUCKET="ibc-assets"  WT_PASSWORD="H4kjmjqEh"  DO_CLIENTKEY="537faa1d0cfc0bbc194c21cadedc42f9" DO_APIKEY="436b3bad8500e47733e90c93b53d4c63" DO_KEY_NAME="IBC_DO" MAILER_SENDER="no-reply@ibcworld.net" DOMAIN="help.ibcworld.net"'
+    end
+  end
+
+  before :publishing, 'deploy:setenv'
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 
