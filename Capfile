@@ -20,6 +20,7 @@ require 'capistrano/rails'
 require 'capistrano/chruby'
 require 'capistrano/bundler'
 require 'capistrano/figaro_yml'
+require 'capistrano/passenger'
 # require 'capistrano/rails/assets'
 # require 'capistrano/rails/migrations'
 
