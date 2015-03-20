@@ -32,7 +32,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-set :default_environment, { 
+set :default_env, { 
   'OFFICE_USERNAME' => "ipolchenko@ibcworld.net",
   'OFFICE_PASSWORD' => "H4kjmjqEh",
 
