@@ -1,6 +1,6 @@
 .row.filelist
   .small-8.columns.filename
-    = best_in_place [@admin.document, doc], :name, :url => admin_document_path, :nil => doc.doc.name
+    = best_in_place [@admin.document, doc], :name, :nil => doc.doc.file.filename
   .small-2.columns.download_link
     = link_to "Download", doc.doc.file.url, class: "small-offset-1"
   .small-2.columns.delete_checkbox
