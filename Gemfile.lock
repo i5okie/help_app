@@ -1,7 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    CFPropertyList (2.3.1)
+    CFPropertyList (2.3.0)
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
       actionview (= 4.2.0)
@@ -37,7 +37,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.8)
+    addressable (2.3.7)
     arel (6.0.0)
     ast (2.0.0)
     astrolabe (1.3.0)
@@ -50,7 +50,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    byebug (4.0.5)
+    byebug (4.0.3)
       columnize (= 0.9.0)
     capistrano (3.4.0)
       i18n
@@ -65,7 +65,7 @@ GEM
     capistrano-figaro-yml (1.0.1)
       capistrano (~> 3.1)
       sshkit (~> 1.2, >= 1.2.0)
-    capistrano-passenger (0.0.5)
+    capistrano-passenger (0.0.2)
       capistrano (~> 3.0)
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
@@ -81,16 +81,16 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    childprocess (0.5.6)
+    childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
-    coffee-script (2.4.1)
+    coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1.1)
+    coffee-script-source (1.9.1)
     colorize (0.7.5)
     columnize (0.9.0)
     database_cleaner (1.4.1)
@@ -104,8 +104,8 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    excon (0.45.1)
-    execjs (2.5.2)
+    excon (0.44.4)
+    execjs (2.4.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.5.0)
@@ -118,15 +118,13 @@ GEM
       thor (~> 0.14)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
-    fog (1.29.0)
+    fog (1.28.0)
       fog-atmos
       fog-aws (~> 0.0)
       fog-brightbox (~> 0.4)
-      fog-core (~> 1.27, >= 1.27.4)
+      fog-core (~> 1.27, >= 1.27.3)
       fog-ecloud
       fog-json
-      fog-local
-      fog-powerdns (>= 0.1.1)
       fog-profitbricks
       fog-radosgw (>= 0.0.2)
       fog-riakcs
@@ -143,7 +141,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.1.2)
+    fog-aws (0.1.1)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -152,30 +150,23 @@ GEM
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
-    fog-core (1.30.0)
+    fog-core (1.29.0)
       builder
-      excon (~> 0.45)
+      excon (~> 0.38)
       formatador (~> 0.2)
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
-    fog-ecloud (0.1.1)
+    fog-ecloud (0.0.2)
       fog-core
       fog-xml
-    fog-json (1.0.1)
-      fog-core (~> 1.0)
+    fog-json (1.0.0)
       multi_json (~> 1.0)
-    fog-local (0.2.1)
-      fog-core (~> 1.27)
-    fog-powerdns (0.1.1)
-      fog-core (~> 1.27)
-      fog-json (~> 1.0)
-      fog-xml (~> 0.1)
-    fog-profitbricks (0.0.2)
+    fog-profitbricks (0.0.1)
       fog-core
       fog-xml
       nokogiri
-    fog-radosgw (0.0.4)
+    fog-radosgw (0.0.3)
       fog-core (>= 1.21.0)
       fog-json
       fog-xml (>= 0.0.1)
@@ -183,37 +174,37 @@ GEM
       fog-core
       fog-json
       fog-xml
-    fog-sakuracloud (1.0.1)
+    fog-sakuracloud (1.0.0)
       fog-core
       fog-json
-    fog-serverlove (0.1.2)
+    fog-serverlove (0.1.1)
       fog-core
       fog-json
-    fog-softlayer (0.4.5)
+    fog-softlayer (0.4.1)
       fog-core
       fog-json
-    fog-storm_on_demand (0.1.1)
+    fog-storm_on_demand (0.1.0)
       fog-core
       fog-json
-    fog-terremark (0.1.0)
+    fog-terremark (0.0.4)
       fog-core
       fog-xml
-    fog-vmfusion (0.1.0)
+    fog-vmfusion (0.0.1)
       fission
       fog-core
-    fog-voxel (0.1.0)
+    fog-voxel (0.0.2)
       fog-core
       fog-xml
-    fog-xml (0.1.2)
+    fog-xml (0.1.1)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
-    foundation-rails (5.5.1.2)
+    foundation-rails (5.5.1.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
-    globalid (0.3.5)
+    globalid (0.3.3)
       activesupport (>= 4.1.0)
     haml (4.0.6)
       tilt
@@ -235,7 +226,7 @@ GEM
     inflecto (0.0.2)
     interception (0.5)
     ipaddress (0.8.0)
-    jbuilder (2.2.13)
+    jbuilder (2.2.11)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.3)
@@ -252,9 +243,9 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
-    mini_magick (4.2.3)
+    mini_magick (4.1.1)
     mini_portile (0.6.2)
-    minitest (5.6.0)
+    minitest (5.5.1)
     multi_json (1.11.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -262,7 +253,7 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
-    parser (2.2.2.0)
+    parser (2.2.0.3)
       ast (>= 1.1, < 3.0)
     pg (0.18.1)
     powerpack (0.1.0)
@@ -270,7 +261,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-rails (0.3.4)
+    pry-rails (0.3.3)
       pry (>= 0.9.10)
     pry-rescue (1.4.1)
       interception (>= 0.5)
@@ -317,9 +308,9 @@ GEM
     ref (1.0.5)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    rspec-core (3.2.3)
+    rspec-core (3.2.2)
       rspec-support (~> 3.2.0)
-    rspec-expectations (3.2.1)
+    rspec-expectations (3.2.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-mocks (3.2.1)
@@ -334,18 +325,18 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
-    rubocop (0.30.0)
+    rubocop (0.29.1)
       astrolabe (~> 1.3)
       parser (>= 2.2.0.1, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
-    ruby-progressbar (1.7.5)
-    ruby_parser (3.6.6)
+    ruby-progressbar (1.7.1)
+    ruby_parser (3.6.5)
       sexp_processor (~> 4.1)
     rubyzip (1.1.7)
     sass (3.4.13)
-    sass-rails (5.0.3)
+    sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
@@ -361,7 +352,7 @@ GEM
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     slop (3.6.0)
-    spring (1.3.4)
+    spring (1.3.3)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (2.12.3)
@@ -377,7 +368,7 @@ GEM
       colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    therubyracer (0.12.2)
+    therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
@@ -448,7 +439,6 @@ DEPENDENCIES
   simple_form
   spring
   spring-commands-rspec
-  sprockets (= 2.12.3)
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
