@@ -55,6 +55,7 @@ end
 group :production do
   gem 'rails_12factor'
   gem "figaro"
+  gem 'sprockets', '2.12.3'
 end
 group :test do
   gem 'capybara'
