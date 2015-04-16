@@ -44,7 +44,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem "figaro"
   gem 'rubocop'
-  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano', '~> 3.4.0', :git => 'https://github.com/chulkilee/capistrano-rails.git'
   gem 'capistrano-rails', '~> 1.1.1'
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-chruby'

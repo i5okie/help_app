@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/chulkilee/capistrano-rails.git
+  revision: 7e3791c275b03eb1e7009945352e049c0937c116
+  specs:
+    capistrano-rails (1.1.2)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -67,9 +75,6 @@ GEM
       sshkit (~> 1.2, >= 1.2.0)
     capistrano-passenger (0.0.2)
       capistrano (~> 3.0)
-    capistrano-rails (1.1.2)
-      capistrano (~> 3.1)
-      capistrano-bundler (~> 1.1)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -399,7 +404,7 @@ DEPENDENCIES
   awesome_print
   best_in_place
   byebug
-  capistrano (~> 3.4.0)
+  capistrano (~> 3.4.0)!
   capistrano-bundler (~> 1.1.2)
   capistrano-chruby
   capistrano-figaro-yml (~> 1.0.1)
