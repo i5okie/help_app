@@ -4,7 +4,7 @@ site "https://supermarket.getchef.com/api/v1"
 cookbook 'apt'
 cookbook 'ark'
 cookbook 'build-essential'
-cookbook 'ruby_build'
+cookbook 'ruby_install', '~> 1.0.4'
 cookbook 'chruby-build', '~> 0.3.0'
 cookbook 'chruby'
 cookbook 'postgresql', '~> 3.4.18'
