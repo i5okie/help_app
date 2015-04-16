@@ -1,6 +1,7 @@
 GIT
-  remote: https://github.com/capistrano/rails.git
-  revision: 7e3791c275b03eb1e7009945352e049c0937c116
+  remote: https://github.com/chulkilee/capistrano-rails.git
+  revision: a56cae3b0f29f3fffd55e48687b8360175eba291
+  branch: sprocket-3
   specs:
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)

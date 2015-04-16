@@ -45,7 +45,7 @@ group :development, :test do
   gem "figaro"
   gem 'rubocop'
   gem 'capistrano', '~> 3.4.0'
-  gem 'capistrano-rails', :git => 'https://github.com/capistrano/rails.git'
+  gem 'capistrano-rails', :git => 'https://github.com/chulkilee/capistrano-rails.git', :branch => 'sprocket-3'
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-chruby'
   gem 'capistrano-passenger'
