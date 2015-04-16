@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/chulkilee/capistrano-rails.git
+  remote: https://github.com/capistrano/rails.git
   revision: 7e3791c275b03eb1e7009945352e049c0937c116
   specs:
     capistrano-rails (1.1.2)
@@ -414,7 +414,7 @@ DEPENDENCIES
   capistrano-chruby
   capistrano-figaro-yml (~> 1.0.1)
   capistrano-passenger
-  capistrano-rails (~> 1.1.1)!
+  capistrano-rails!
   capybara
   carrierwave
   coffee-rails (~> 4.1.0)
