@@ -19,7 +19,7 @@ gem "mini_magick"
 gem 'foundation-rails'
 gem "font-awesome-rails"
 gem 'therubyracer', :group => :assets
-
+gem "figaro"
 gem 'haml-rails'
 gem "best_in_place"
 gem 'high_voltage'
@@ -42,10 +42,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
-  gem "figaro"
+
   gem 'rubocop'
   gem 'capistrano', '~> 3.4.0'
-  gem 'capistrano-rails', :git => 'https://github.com/chulkilee/capistrano-rails.git', :branch => 'sprocket-3'
+  gem 'capistrano-rails'#, :git => 'https://github.com/chulkilee/capistrano-rails.git', :branch => 'sprocket-3'
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-chruby'
   gem 'capistrano-passenger'
@@ -53,7 +53,7 @@ group :development, :test do
 end
 group :production do
   gem 'rails_12factor'
-  gem "figaro"
+
 end
 group :test do
   gem 'capybara'
