@@ -15,6 +15,8 @@ end
 gem 'devise'
 gem 'carrierwave'
 gem "fog"
+gem "ransack"
+gem 'kaminari'
 gem "mini_magick"
 gem 'foundation-rails'
 gem "font-awesome-rails"

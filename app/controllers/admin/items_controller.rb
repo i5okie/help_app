@@ -2,7 +2,8 @@ class Admin::ItemsController < Admin::BaseController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true).page(params[:page])
   end
   
   def new
