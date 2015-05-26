@@ -11,7 +11,7 @@ class Item < ActiveRecord::Base
   has_many :attachments, through: :itemattachments
 
   validates :name, presence: true, length: 5..100
-  validates :description, presence: true, length: 5..500
+  validates :description, presence: true, length: 5..1000
   validates :category_id, presence: true
   validates :manufacturer_id, presence: true
   

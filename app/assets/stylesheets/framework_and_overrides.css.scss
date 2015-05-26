@@ -203,9 +203,9 @@ http://svgeneration.com/generate/GPlay?height=8&width=8&background=f0f0f0&overla
   display: block;
   height: 300px;
   margin: 0 15px 10px 15px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   border: solid 1px white;
 }
 
@@ -213,6 +213,12 @@ http://svgeneration.com/generate/GPlay?height=8&width=8&background=f0f0f0&overla
   border-left: solid 2px #ccc;
   padding-left: 10px;
   margin-top: 10px;
+  padding-right: 0;
+  margin-right: 0;
+  color: #555;
+  font-size: .9em;
+  // font-weight: 100;
+  line-height: 1.3;
 }
 
 .contact {
@@ -235,11 +241,12 @@ http://svgeneration.com/generate/GPlay?height=8&width=8&background=f0f0f0&overla
   margin-bottom: 5;
 }
 
-.lead {
-  color: #555;
-  font-size: .8em;
-  font-weight: 100;
-}
+// .lead {
+//   color: #555;
+//   font-size: .9em !important;
+//   // font-weight: 100;
+//   line-height: 1.2 !important;
+// }
 
 .top-buffer { margin-top:1em; }
 
