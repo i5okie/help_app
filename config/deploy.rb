@@ -9,6 +9,8 @@ set :repo_url, 'git@github.com:i5okie/ibc_help_app.git'
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deploy/ibc_help_app'
 set :chruby_ruby, '2.2.1'
+
+set :user, 'deploy'
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -31,7 +33,8 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-
+set :default_stage, 'production'
+set :deploy_via, :remote_cache
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
