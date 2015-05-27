@@ -34,7 +34,8 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :default_env, { path: "/home/deploy/.rubies/ruby-2.2.1/bin/ruby:$PATH"}
-set :passenger_environment_variables, { :path => '/usr/bin/passenger' }
+# set :passenger_environment_variables, { :path => '/usr/bin/passenger' }
+set :passenger_restart_command, 'passenger-config restart-app'
 
 set :default_stage, 'production'
 set :deploy_via, :remote_cache
@@ -43,12 +44,19 @@ set :deploy_via, :remote_cache
 
 namespace :deploy do
   desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      execute :touch, release_path.join('tmp/restart.txt')
+  after :restart, :restart_passenger do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      within release_path do
+        execute :touch, 'tmp/restart.txt'
+      end
     end
   end
+  # task :restart do
+  #   on roles(:app), in: :sequence, wait: 5 do
+  #     # Your restart mechanism here, for example:
+  #     execute :touch, release_path.join('tmp/restart.txt')
+  #   end
+  # end
 
   desc "set environmental variabls"
   task :setenv do
@@ -57,8 +65,11 @@ namespace :deploy do
     end
   end
 
+
+
   before :publishing, 'deploy:setenv'
-  after :publishing, 'deploy:restart'
+  # after :publishing, 'deploy:restart'
+  after :finishing, 'deploy:restart_passenger'
   after :finishing, 'deploy:cleanup'
 
   after :restart, :clear_cache do
