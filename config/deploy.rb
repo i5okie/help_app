@@ -34,8 +34,8 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :default_env, { path: "/home/deploy/.rubies/ruby-2.2.1/bin/ruby:$PATH"}
-# set :passenger_environment_variables, { :path => '/usr/bin/passenger' }
-set :passenger_restart_command, 'passenger-config restart-app'
+# set :passenger_environment_variables, { :path => '/usr/bin/' }
+# set :passenger_restart_command, 'passenger-config restart-app'
 
 set :default_stage, 'production'
 set :deploy_via, :remote_cache
@@ -69,7 +69,7 @@ namespace :deploy do
 
   before :publishing, 'deploy:setenv'
   after :publishing, :'passenger:restart'
-  after :finishing, 'deploy:restart_passenger'
+  # after :finishing, 'deploy:restart_passenger'
   after :finishing, 'deploy:cleanup'
 
   after :restart, :clear_cache do
