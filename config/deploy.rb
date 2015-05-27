@@ -68,7 +68,7 @@ namespace :deploy do
 
 
   before :publishing, 'deploy:setenv'
-  # after :publishing, 'deploy:restart'
+  after :publishing, :'passenger:restart'
   after :finishing, 'deploy:restart_passenger'
   after :finishing, 'deploy:cleanup'
 
