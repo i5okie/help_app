@@ -1,7 +1,7 @@
 lock '3.4.0'
 
 set :application, 'ibc_help_app'
-set :repo_url, 'git@github.com:i5okie/ibc_help_app.git'
+set :deploy_user, 'deploy'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -10,9 +10,10 @@ set :repo_url, 'git@github.com:i5okie/ibc_help_app.git'
 set :deploy_to, '/home/deploy/ibc_help_app'
 set :chruby_ruby, '2.2.1'
 
-set :user, 'deploy'
+
 # Default value for :scm is :git
-# set :scm, :git
+set :scm, :git
+set :repo_url, 'git@github.com:i5okie/ibc_help_app.git'
 
 # Default value for :format is :pretty
 # set :format, :pretty
@@ -32,6 +33,8 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { path: "/home/deploy/.rubies/ruby-2.2.1/bin/ruby:$PATH"}
+set :passenger_environment_variables, { :path => '/usr/bin/passenger' }
 
 set :default_stage, 'production'
 set :deploy_via, :remote_cache
@@ -67,15 +70,6 @@ namespace :deploy do
     end
   end
 
-  namespace :logs do
-    desc "tail rails logs"
-    task :tail_rails do
-      on roles(:app) do
-        execute "tail -f #{shared_path}/log/#{fetch(:rails_env)}.log"
-      end
-    end
-  end
-
 
   namespace :figaro do
     desc "SCP transfer figaro configuration to the shared folder"
@@ -89,4 +83,13 @@ namespace :deploy do
     end
   end
 
+end
+
+namespace :logs do
+  desc "tail rails logs"
+  task :tail_rails do
+    on roles(:app) do
+      execute "tail -f #{shared_path}/log/#{fetch(:rails_env)}.log"
+    end
+  end
 end
