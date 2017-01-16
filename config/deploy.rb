@@ -63,20 +63,6 @@ namespace :deploy do
   # end
 
 
-  before 'deploy:assets:precompile', :symlink_config_files
-  desc "Link shared files"
-  task :symlink_config_files do
-    transfer :up, "config/application.yml", "#{shared_path}/local_env.yml", :via => :scp
-    transfer :up, "config/application.yml", "#{shared_path}/database.yml", :via => :scp
-
-    symlinks = {
-      "#{shared_path}/config/database.yml" => "#{release_path}/config/database.yml",
-      "#{shared_path}/config/local_env.yml" => "#{release_path}/config/local_env.yml"
-    }
-    run symlinks.map{|from, to| "ln -nfs #{from} #{to}"}.join(" && ")
-  end
-
-
   desc "set environmental variabls"
   task :setenv do
     on roles(:app) do
@@ -100,18 +86,34 @@ namespace :deploy do
     end
   end
 
-
-  namespace :figaro do
+  namespace :local_env do
     desc "SCP transfer figaro configuration to the shared folder"
     task :setup do
-      transfer :up, "config/application.yml", "#{shared_path}/application.yml", :via => :scp
+      transfer :up, "config/local_env.yml", "#{shared_path}/local_env.yml", :via => :scp
+      transfer :up, "config/database.yml", "#{shared_path}/database.yml", :via => :scp
     end
 
-    desc "Symlink application.yml to the release path"
+    desc "Link shared files"
     task :finalize do
-      run "ln -sf #{shared_path}/application.yml #{release_path}/config/application.yml"
+      symlinks = {
+        "#{shared_path}/config/database.yml" => "#{release_path}/config/database.yml",
+        "#{shared_path}/config/local_env.yml" => "#{release_path}/config/local_env.yml"
+      }
+      run symlinks.map{|from, to| "ln -nfs #{from} #{to}"}.join(" && ")
     end
   end
+
+  # namespace :figaro do
+  #   desc "SCP transfer figaro configuration to the shared folder"
+  #   task :setup do
+  #     transfer :up, "config/application.yml", "#{shared_path}/application.yml", :via => :scp
+  #   end
+  #
+  #   desc "Symlink application.yml to the release path"
+  #   task :finalize do
+  #     run "ln -sf #{shared_path}/application.yml #{release_path}/config/application.yml"
+  #   end
+  # end
 
 end
 
