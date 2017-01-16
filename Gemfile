@@ -32,7 +32,7 @@ group :development do
   gem 'better_errors'
   gem 'html2haml'
   gem 'hub', :require=>nil
-  gem "awesome_print", require:"ap"
+  gem "awesome_print"
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
