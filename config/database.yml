@@ -26,7 +26,8 @@
 
 default: &default
    adapter: postgresql
-   encoding: unicode  
+   encoding: unicode
+   host: localhost
    pool: 5
    username: ibc_help
    password: ibcworld
