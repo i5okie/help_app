@@ -21,7 +21,7 @@ require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/figaro_yml'
 # require 'capistrano/passenger'
-require 'capistrano/passenger/no_hook'
+require 'capistrano/passenger'
 # require 'capistrano/rails/assets'
 # require 'capistrano/rails/migrations'
 
