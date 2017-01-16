@@ -29,7 +29,8 @@ set :repo_url, 'git@github.com:i5okie/ibc_help_app.git'
 # set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/local_env.yml}
 set :linked_files, %w{config/application.yml}
 
 # Default value for linked_dirs is []
@@ -86,22 +87,22 @@ namespace :deploy do
     end
   end
 
-  namespace :local_env do
-    desc "SCP transfer figaro configuration to the shared folder"
-    task :setup do
-      transfer :up, "config/local_env.yml", "#{shared_path}/local_env.yml", :via => :scp
-      transfer :up, "config/database.yml", "#{shared_path}/database.yml", :via => :scp
-    end
-
-    desc "Link shared files"
-    task :finalize do
-      symlinks = {
-        "#{shared_path}/config/database.yml" => "#{release_path}/config/database.yml",
-        "#{shared_path}/config/local_env.yml" => "#{release_path}/config/local_env.yml"
-      }
-      run symlinks.map{|from, to| "ln -nfs #{from} #{to}"}.join(" && ")
-    end
-  end
+  # namespace :local_env do
+  #   desc "SCP transfer figaro configuration to the shared folder"
+  #   task :setup do
+  #     transfer :up, "config/local_env.yml", "#{shared_path}/local_env.yml", :via => :scp
+  #     transfer :up, "config/database.yml", "#{shared_path}/database.yml", :via => :scp
+  #   end
+  #
+  #   desc "Link shared files"
+  #   task :finalize do
+  #     symlinks = {
+  #       "#{shared_path}/config/database.yml" => "#{release_path}/config/database.yml",
+  #       "#{shared_path}/config/local_env.yml" => "#{release_path}/config/local_env.yml"
+  #     }
+  #     run symlinks.map{|from, to| "ln -nfs #{from} #{to}"}.join(" && ")
+  #   end
+  # end
 
   # namespace :figaro do
   #   desc "SCP transfer figaro configuration to the shared folder"
