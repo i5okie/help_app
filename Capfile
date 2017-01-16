@@ -16,8 +16,8 @@ require 'capistrano/rails'
 #   https://github.com/capistrano/rails
 #
 # require 'capistrano/rvm'
-# require 'capistrano/rbenv'
-require 'capistrano/chruby'
+require 'capistrano/rbenv'
+# require 'capistrano/chruby'
 require 'capistrano/bundler'
 require 'capistrano/figaro_yml'
 # require 'capistrano/passenger'

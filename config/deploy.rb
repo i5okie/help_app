@@ -8,7 +8,11 @@ set :deploy_user, 'deploy'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deploy/ibc_help_app'
-set :chruby_ruby, '2.2.1'
+
+# Set rbenv type and version
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.2.1'
+# set :chruby_ruby, '2.2.1'
 
 
 # Default value for :scm is :git
@@ -87,7 +91,7 @@ namespace :deploy do
     task :setup do
       transfer :up, "config/application.yml", "#{shared_path}/application.yml", :via => :scp
     end
-   
+
     desc "Symlink application.yml to the release path"
     task :finalize do
       run "ln -sf #{shared_path}/application.yml #{release_path}/config/application.yml"

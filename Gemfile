@@ -29,7 +29,7 @@ gem 'simple_form'
 
 gem 'pg'
 group :development do
-  # gem 'better_errors'
+  gem 'better_errors'
   gem 'html2haml'
   gem 'hub', :require=>nil
   gem "awesome_print", require:"ap"
@@ -49,7 +49,7 @@ group :development, :test do
   gem 'capistrano', '~> 3.4.0'
   gem 'capistrano-rails'#, :git => 'https://github.com/chulkilee/capistrano-rails.git', :branch => 'sprocket-3'
   gem 'capistrano-bundler', '~> 1.1.2'
-  gem 'capistrano-chruby'
+  gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
   gem 'capistrano-figaro-yml', '~> 1.0.1'
 end
