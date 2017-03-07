@@ -12,12 +12,12 @@ group :development, :test do
   gem 'spring'
 end
 gem 'devise'
-gem 'carrierwave'
+gem 'carrierwave', '0.10.0' 
 gem "fog"
 gem "ransack"
 gem 'kaminari'
 gem "mini_magick"
-gem 'foundation-rails'
+gem 'foundation-rails', '5.5.2.1'
 gem "font-awesome-rails"
 gem 'therubyracer', :group => :assets
 gem "figaro"
